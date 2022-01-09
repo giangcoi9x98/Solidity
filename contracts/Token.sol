@@ -84,15 +84,10 @@ contract Token is Owner {
         address account,
         uint256 amount,
         bool isIncrease
-    ) public {
+    ) private {
         if (isIncrease) {
             _currentBalance[account][blockNumber] += amount;
         } else {
-            // console.log(
-            //     isIncrease,
-            //     _currentBalance[account][blockNumber],
-            //     amount
-            // );
             _currentBalance[account][blockNumber] -= amount;
         }
     }
